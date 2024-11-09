@@ -3,7 +3,6 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/user';
 
-// Registro de usuario
 export const register = async (req: Request, res: Response): Promise<void> => {
     try {
         const { name, email, password } = req.body;
@@ -25,7 +24,6 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     }
 };
 
-// Inicio de sesión
 export const login = async (req: Request, res: Response): Promise<void> => {
     try {
         const { email, password } = req.body;
