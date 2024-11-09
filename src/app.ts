@@ -19,10 +19,10 @@ mongoose.connect(process.env.MONGODB_URI as string)
   .catch((error) => console.error("Error al conectar a MongoDB:", error));
 
 // Autenticación
-app.use('/api/auth', authRoutes);
+app.use('/auth', authRoutes);
 
 // Libros
-app.use('/api/books', bookRoutes);
+app.use('/books', bookRoutes);
 
 // Test
 app.get('/', (req, res) => {
@@ -30,10 +30,10 @@ app.get('/', (req, res) => {
 });
 
 // Reservas
-app.use('/api/reservations', reservationRoutes);
+app.use('/reservations', reservationRoutes);
 
 // Usuarios
-app.use('/api/users', userRoutes);
+app.use('/users', userRoutes);
 
 
 app.listen(PORT, () => {
